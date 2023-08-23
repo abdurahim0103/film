@@ -18,7 +18,7 @@ class GetCategory(APIView):
     def get(self, request):
         category = Category.objects.all()
         serializer = CategorySerializer(category, many= True)
-
+        return Response(serializer.data)
 
 
 
